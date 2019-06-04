@@ -1,0 +1,43 @@
+<html>
+	<head></head>
+	<body style="background-image: url(bg.jpg); background-size: 100% 100%;">
+		<h1>Очки:<span class="score">0</span></h1>
+		<script>
+			let point = 0
+			let zhuki = 0
+			let interv = function(){
+				let rand = Math.random()*1300
+				let round = Math.round(rand)
+
+				let rand_top = Math.random()*700
+				let round_top = Math.round(rand_top)
+
+				let newdiv = document.createElement('img')
+				document.body.appendChild(newdiv)
+				newdiv.style.height = '200px'
+				newdiv.style.width = '200px'
+				newdiv.src = 'img.svg'
+				newdiv.style.marginLeft = round + 'px'
+				newdiv.style.marginTop = round_top + 'px'
+				newdiv.style.position = 'absolute'
+				newdiv.onclick = function(){
+					newdiv.style.display = 'none'
+					point = point + 1
+					document.querySelector('.score').innerHTML = point;
+				}
+			}
+			let check = function(){
+				if (  point==15   ) {//уловие
+					alert("нщгцшт")
+					
+				} 
+				if (   point--15   ) {//условие
+					alert("нщщдщыу")
+					
+				} 
+			}
+			setInterval(interv,1000)
+			setTimeout(check,10000)
+		</script>
+	</body>
+</html>
